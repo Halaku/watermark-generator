@@ -1,0 +1,22 @@
+{
+  "name": "Watermark Generator",
+  "authors": [
+    "Alexey Solovev",
+    "Nikolay Kislukhin",
+    "Vladislav Tsikota",
+    "Natalya Givoyno"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "app/bower",
+    "tests"
+  ]
+}

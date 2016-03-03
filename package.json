@@ -1,0 +1,19 @@
+{
+  "name": "watermark-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halaku/wmg.git"
+  },
+  "author": "Alexey Solovev, Nikolay Kislukhin, Vladislav Tsikota, Natalya Givoyno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Halaku/wmg/issues"
+  },
+  "homepage": "https://github.com/Halaku/wmg#readme"
+}
