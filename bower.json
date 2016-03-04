@@ -18,5 +18,10 @@
     "test",
     "app/bower",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery-ui": "jqueryui#^1.11.4",
+    "jquery": "^2.2.1",
+    "normalize-css": "normalize.css#^3.0.3"
+  }
 }

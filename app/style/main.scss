@@ -1,0 +1,20 @@
+$white: #f1f1f5;
+$orange: #f97e76;
+$light-orange: #f4c3c2;
+$font: #2e3641;
+
+@import "_misc/fonts";
+@import "_misc/normalize";
+@import "_misc/mixins";
+@import "_misc/sprite";
+
+@import "_plugins/jquery-ui";
+
+
+@import "_layout/basic";
+@import "_layout/section";
+@import "_layout/aside";
+@import "_layout/footer";
+
+@import "_widget/slider";
+@import "_widget/spinner";

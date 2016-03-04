@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/Halaku/wmg/issues"
   },
-  "homepage": "https://github.com/Halaku/wmg#readme"
+  "homepage": "https://github.com/Halaku/wmg#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp.spritesmith": "^6.2.0",
+    "main-bower-files": "^2.11.1"
+  }
 }

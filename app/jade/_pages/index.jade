@@ -1,0 +1,44 @@
+extends ../main
+block title
+	|Watermark Generator
+block section
+	section.section
+		.preview
+			.preview__wrapper
+				.preview__header
+					h1.preview__header-text Генератор водяных знаков
+				.preview__window
+					.preview__window-img 
+						//- ^ этот контейнер всегда размером с изображение,
+						//- | поэтому именно внутри него идет позиционирование
+						//- | водяного знака
+						img(src="img/nyan.png", alt="Обрабатываемое изображение").processed_img
+						img(src="img/wm-test.png", alt="Обрабатываемый вотермарк").processed_wm
+
+		.settings
+				.settings__header
+					h2.settings__header-text Настройки
+				.settings__files
+					label(for="source").input__label Исходное изображение
+					input(type="file", name="source").input__file
+					label(for="watermark").input__label Водяной знак
+					input(type="file", name="watermark").input__file
+				.settings__position
+					.input__label.input__label_position Положение
+					.map
+						ul.map__list
+							- for (i = 0; i < 9; i++)
+								li(class="#{(i == 0) ? 'map__item_active' : ''}").map__item
+					.coords
+						.coords__x
+							label(for="coords-x").input__label.input__label_coords X
+							input(id="coords-x" name="coords-x" value="0").coords__input
+						.coords__y
+							label(for="coords-y").input__label.input__label_coords Y
+							input(id="coords-y" name="coords-y" value="0").coords__input
+				.settings__opacity
+					.input__label.input__label_opacity Прозрачность
+					.opacity__block
+				.settings__buttons
+					input(type="reset", value="Сброс").button.button__reset
+					input(type="submit", value="Скачать").button.button__submit
