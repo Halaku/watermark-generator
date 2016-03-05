@@ -1,8 +1,8 @@
 .section {
+  padding-top: 60px;
   height: 670px;
   width: 960px;
-  margin: 50px auto;
-
+  margin: 0 auto;
 }
 
 .preview {
@@ -74,18 +74,18 @@
 
 
 .settings__header {
-	text-align: center;
-	margin-top: 25px;
-	margin-bottom: 33px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 33px;
 }
 
 .settings__header-text {
-	font-family: "robotolight";
-	font-size: 26px;
-	font-weight: normal;
-	margin: 0;
-	line-height: 28px;
-	color: $font;
+  font-family: 'robotolight';
+  font-size: 26px;
+  font-weight: normal;
+  margin: 0;
+  line-height: 28px;
+  color: $font;
 }
 
 // ==================================
@@ -95,77 +95,79 @@
 .settings__files,
 .settings__position,
 .settings__opacity {
-	border-bottom: 1px solid $light-orange;
-	margin-bottom: 15px;
+  border-bottom: 1px solid $light-orange;
+  margin-bottom: 15px;
 }
 
 .input__label {
-	font-family: "robotolight";
-	font-size: 14px;
-	color: $font;
-	line-height: 16px;
-	margin-bottom: 7px;
+  font-family: 'robotolight';
+  font-size: 14px;
+  color: $font;
+  line-height: 16px;
+  margin-bottom: 7px;
 }
 
 .input__file {
-	margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 // ==================================
 // Позиция
 // ==================================
 .settings__position {
-	@include clearfix;
+  @include clearfix;
 }
 .map {
-	float: left;
-	margin-bottom: 36px;
+  float: left;
+  margin-bottom: 36px;
 }
 
 .map__list {
-	font-size: 0;
-	display: block;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	border-radius: 3px;
-	overflow: hidden;
-
-	border-color: #9eb2c0;
-	border-left: 1px solid #9eb2c0;
-	border-bottom: 1px solid #9eb2c0;
-	width: 103px;
-	height: 103px;
+  @include clearfix;
+  display: inline-block;
+  width: 101px;
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  border-color: #9eb2c0;
+  border: 1px solid #9eb2c0;
+  background-color: #9eb2c0;
 }
 
 .map__item {
-	box-sizing: border-box;
-	list-style: none;
-	display: inline-block;
-	width: 34px;
-	height: 34px;
-	cursor: pointer;
-	content: "";
-	background-color: #dbe1e8;
-	border-right: 1px solid #9eb2c0;
-	border-top: 1px solid #9eb2c0;
-	transition: all 0.5s;
+  box-sizing: border-box;
+  list-style: none;
+  float: left;
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+  content: '';
+  background-color: #dbe1e8;
+  transition: all .5s;
+  margin: 1px 1px 0 0;
+  &:nth-child(-n+3) {
+    margin-top: 0;
+  }
+  &:nth-child(3n+0) {
+    margin-right: 0;
+  }
 
-	&:hover {
-		background-color: #9eb2c0;
-	}
-	&_active,
-	&_active:hover{
-		background-color: $orange;
-	}
+  &:hover {
+    background-color: #9eb2c0;
+  }
+  &_active,
+  &_active:hover {
+    background-color: $orange;
+  }
 }
 
 .coords {
-	float: right;
+  float: right;
 }
 
 .coords__input {
-	width: 44px;
+  width: 44px;
 }
 
 
@@ -180,32 +182,32 @@
 // ==================================
 
 .button {
-	width: 99px;
-	height: 42px;
-	font-family: "robotomedium";
-	color: $white;
-	font-size: 18px;
-	border: none;
-	border-radius: 3px;
+  width: 99px;
+  height: 42px;
+  font-family: 'robotomedium';
+  color: $white;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
 }
 
 .button__reset {
-	background-color: #c1cfd9;
+  background-color: #c1cfd9;
 
-	&:hover {
-		background-color: darken(#c1cfd9, 10%);
-	}
-	&:active {
-		background-color: darken(#c1cfd9, 20%);
-	}
+  &:hover {
+    background-color: darken(#c1cfd9, 10%);
+  }
+  &:active {
+    background-color: darken(#c1cfd9, 20%);
+  }
 }
 .button__submit {
-	background-color: $orange;
+  background-color: $orange;
 
-	&:hover {
-		background-color: darken($orange, 10%);;
-	}
-	&:active {
-		background-color: darken($orange, 20%);;
-	}
+  &:hover {
+    background-color: darken($orange, 10%);;
+  }
+  &:active {
+    background-color: darken($orange, 20%);;
+  }
 }
