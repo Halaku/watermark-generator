@@ -18,11 +18,19 @@ block section
 		.settings
 				.settings__header
 					h2.settings__header-text Настройки
-				.settings__files
+				form.settings__files(enctype="miltipart/form-data", method="post", id="files-form")
 					label(for="source").input__label Исходное изображение
-					input(type="file", name="source").input__file
+					.input__file-container
+						input(type="text").input__file-name
+						label(for="source").input__file-button
+						label(for="source").input__fake-file
+						input(type="file", name="source", id="source").input__file
 					label(for="watermark").input__label Водяной знак
-					input(type="file", name="watermark").input__file
+					.input__file-container
+						input(type="text").input__file-name
+						label(for="watermark").input__file-button
+						label(for="watermark").input__fake-file
+						input(type="file", name="watermark" id="watermark").input__file
 				.settings__position
 					.input__label.input__label_position Положение
 					.map
@@ -41,4 +49,4 @@ block section
 					.opacity__block
 				.settings__buttons
 					input(type="reset", value="Сброс").button.button__reset
-					input(type="submit", value="Скачать").button.button__submit
+					input(type="submit", value="Скачать", id="files-upload").button.button__submit
