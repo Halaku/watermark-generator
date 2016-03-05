@@ -68,7 +68,7 @@
   border-left: 1px solid #9f979a;
   width: 260px;
   height: 670px;
-  padding: 0 24px;
+  
 }
 
 
@@ -116,10 +116,16 @@
 // ==================================
 .settings__position {
   @include clearfix;
+  padding-left: 19px;
+  padding-right: 21px;
+}
+
+.input__label_position {
+  margin-bottom: 35px;
 }
 .map {
   float: left;
-  margin-bottom: 36px;
+  margin-bottom: 31px;
 }
 
 .map__list {
@@ -164,10 +170,22 @@
 
 .coords {
   float: right;
+  &__x{
+    margin-bottom: 12px;
+  }
+}
+
+.input__label_coords {
+  font-family: "robotolight";
+  font-size: 16px;
+  color: #444a53;
+  margin-right: 3px;
+
+  vertical-align: middle;
 }
 
 .coords__input {
-  width: 44px;
+
 }
 
 

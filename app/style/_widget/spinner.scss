@@ -1,0 +1,62 @@
+.ui-spinner {
+  
+  width: 64px;
+  border: none;
+	background-color: $white;
+
+	.ui-spinner-input {
+		border: 1px solid #9eb2c0;
+		border-radius: 2px/3px;
+		width: 44px;
+		height: 43px;
+		text-align: center;
+		margin: 0;
+		font-family: "robotolight";
+		font-size: 24px;
+		color: #444a53;
+	}
+  .ui-state-default {
+    background: none;
+    border: none;
+    width: 13px;
+    padding-left: 6px;
+		height: 11px;
+		cursor: pointer;
+  }
+
+
+  .ui-spinner-up {
+    display: block;
+
+    .ui-button-text {
+      display: block;
+      padding: 0;
+      content: '';
+      @include sprite ($up);
+      margin-top: 3px;
+    }
+
+    &:hover {
+      .ui-button-text {
+        @include sprite ($up-hover);
+      }
+    }
+  }
+
+  .ui-spinner-down {
+    display: block;
+
+    .ui-button-text {
+      display: block;
+      padding: 0;
+      content: '';
+      @include sprite ($down);
+    }
+
+    &:hover {
+      .ui-button-text {
+        @include sprite ($down-hover);
+      }
+    }
+  }
+}
