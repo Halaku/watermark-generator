@@ -10,7 +10,7 @@ var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var rename = require("gulp-rename");
-var concat = require('gulp-concat');
+// var concat = require('gulp-concat');
 
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
