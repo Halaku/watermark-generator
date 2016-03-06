@@ -14,7 +14,7 @@ var rename = require("gulp-rename");
 
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
-        .pipe(gulpif('*.js', gulp.dest('./dev/js')));
+        .pipe(gulpif('*.js', gulp.dest('./app/js/vendor')));
 
         
     gulp.src('./app/bower/normalize-css/normalize.css')
@@ -25,8 +25,8 @@ gulp.task('mainfiles', function() {
 
 gulp.task('js', function() {
     gulp.src('./app/js/*.js')
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('./dev/js'));
+        // .pipe(concat('main.js'))
+        .pipe(gulp.dest('./dev/js/'));
     });
 
 gulp.task('sprite', function() {

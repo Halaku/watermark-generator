@@ -31,7 +31,7 @@ var Positioning = (function(){
 	var _setUpListners = function(){
 		mapList.on('click', _sector);
 		_coord();
-		// $('.processed_wm').draggable();
+		_mouseMove();
 	};
 
 //Перемещение вотермарка с помощью секторов
@@ -41,8 +41,8 @@ var Positioning = (function(){
 			if(e.target == mapItem[i]){
 				wm.css({'top': displacement[i][0],
 								'left':displacement[i][1]});
-				inputX.attr('value', displacement[i][1]);
-				inputY.attr('value', displacement[i][0]);
+				inputX.val(displacement[i][1]);
+				inputY.val(displacement[i][0]);
 				$(mapItem[i]).addClass('map__item_active');
 			}
 		}
@@ -66,8 +66,21 @@ var Positioning = (function(){
 		};
 	};
 
+//Перемещение вотермарка с помощью мыши
+	var _mouseMove = function(){
+		$('#draggable').draggable({
+			cursor: 'move',
+			drag: function(){
+				console.log($('#draggable').position().left);
+				inputX.val($('#draggable').position().left);
+				inputY.val($('#draggable').position().top);
+			},
+			containment: '.preview__window-img'
+		});
+	};
+
     return{
-        init: init
+      init: init
     };
 })();
 

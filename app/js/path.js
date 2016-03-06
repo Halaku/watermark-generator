@@ -1,10 +1,9 @@
 (function(){
 	function include(url) {
-		var script = document.createElement('script');
-		script.src = url;
-		document.getElementsByTagName('head')[0].appendChild(script);
+		$('body').append("<script src='"+ url +"'></script>");
 	}
 
-	include("js/positioning.js");
 	include("js/main.js");
+	include("js/positioning.js");
+
 })();
