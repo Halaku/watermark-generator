@@ -20,7 +20,7 @@
     border: none;
     width: 13px;
     padding-left: 6px;
-		height: 11px;
+		height: 21px;
 		cursor: pointer;
   }
 
@@ -44,10 +44,11 @@
   }
 
   .ui-spinner-down {
-    display: block;
+   display: block;
+   vertical-align: bottom;
 
     .ui-button-text {
-      display: block;
+      display: inline-block;
       padding: 0;
       content: '';
       @include sprite ($down);

@@ -95,8 +95,9 @@
 .settings__files,
 .settings__position,
 .settings__opacity {
+  position: relative;
   border-bottom: 1px solid $light-orange;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
 
 .input__label {
