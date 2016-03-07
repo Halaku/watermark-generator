@@ -32,6 +32,10 @@ var Positioning = (function(){
 		mapList.on('click', _sector);
 		_coord();
 		_mouseMove();
+		_coordSpin();
+		// inputX.change(function(){
+		// 	console.log('change');
+		// });
 	};
 
 //Перемещение вотермарка с помощью секторов
@@ -71,11 +75,35 @@ var Positioning = (function(){
 		$('#draggable').draggable({
 			cursor: 'move',
 			drag: function(){
-				console.log($('#draggable').position().left);
 				inputX.val($('#draggable').position().left);
 				inputY.val($('#draggable').position().top);
 			},
 			containment: '.preview__window-img'
+		});
+	};
+
+//Перемещение вотермарка спиннерами
+	var _coordSpin = function(){
+		var spinnerX = $( "#coords-x" ).spinner({
+			min: 0,
+			max: imgWidth-wmWidth
+		});
+		spinnerX.on('spin', function(e, ui){
+			var currentVal = ui.value;
+			wm.css({
+				left: currentVal + 'px'
+			});
+		});
+
+		var spinnerY =$( "#coords-y" ).spinner({
+			min: 0,
+			max: imgHeight-wmHeight
+		});
+		spinnerY.on('spin', function(e, ui){
+			var currentVal = ui.value;
+			wm.css({
+				top: currentVal + 'px'
+			});
 		});
 	};
 
