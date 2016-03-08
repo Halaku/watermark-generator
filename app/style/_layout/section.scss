@@ -97,6 +97,19 @@
   position: relative;
   border-bottom: 1px solid $light-orange;
   margin-bottom: 15px;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    left: 121px;
+    bottom: -20px; /* Положение треугольника */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid $orange;
+  }
+  &:after {
+    border-top: 10px solid $white;
+    bottom: -19px; 
+  }
 }
 
 .input__label {
@@ -118,13 +131,14 @@
   @include clearfix;
   padding-left: 19px;
   padding-right: 21px;
+  margin-bottom: 17px;
 }
 
 .input__label_position {
   margin-bottom: 35px;
 }
 .map {
-  float: left;
+  display: inline-block;
   margin-bottom: 31px;
 }
 
@@ -220,12 +234,11 @@
   font-size: 18px;
   border: none;
   border-radius: 3px;
-
 }
 
 .button__reset {
   background-color: #c1cfd9;
-box-sizing: border-box;
+  box-sizing: border-box;
   &:hover {
     border-width: 1px;
     border-color: rgb(166, 178, 187);
