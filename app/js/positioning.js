@@ -33,9 +33,6 @@ var Positioning = (function(){
 		_coord();
 		_mouseMove();
 		_coordSpin();
-		// inputX.change(function(){
-		// 	console.log('change');
-		// });
 	};
 
 //Перемещение вотермарка с помощью секторов
@@ -57,14 +54,12 @@ var Positioning = (function(){
 		document.getElementById('coords-x').oninput = function(e){
 			var x = this.value;
 			if(x>=0 && x<=(imgWidth-wmWidth) && !isNaN(parseFloat(x)) && isFinite(x)){
-				console.log(x);
 				wm.css({'left': x +'px'});
 			}
 		};
 		document.getElementById('coords-y').oninput = function(e){
 			var y = this.value;
 			if(y>=0 && y<=(imgHeight-wmHeight) && !isNaN(parseFloat(y)) && isFinite(y)){
-				console.log(y);
 				wm.css({'top': y +'px'});
 			}
 		};
@@ -75,8 +70,8 @@ var Positioning = (function(){
 		$('#draggable').draggable({
 			cursor: 'move',
 			drag: function(){
-				inputX.val($('#draggable').position().left);
-				inputY.val($('#draggable').position().top);
+				inputX.val($(this).position().left);
+				inputY.val($(this).position().top);
 			},
 			containment: '.preview__window-img'
 		});
