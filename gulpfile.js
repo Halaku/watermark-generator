@@ -15,7 +15,6 @@ var concat = require('gulp-concat');
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
         .pipe(gulpif('*.js', gulp.dest('./dev/js')));
-
         
     gulp.src('./app/bower/normalize-css/normalize.css')
         .pipe(rename('normalize.scss'))
