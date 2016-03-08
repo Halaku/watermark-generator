@@ -14,7 +14,7 @@ var rename = require("gulp-rename");
 
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
-        .pipe(gulpif('*.js', gulp.dest('./app/js/vendor')));
+        .pipe(gulpif('*.js', gulp.dest('./dev/js/')));
 
         
     gulp.src('./app/bower/normalize-css/normalize.css')
