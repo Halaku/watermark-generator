@@ -23,7 +23,7 @@ gulp.task('mainfiles', function() {
 
 
 gulp.task('js', function() {
-    gulp.src('./app/js/*.js')
+    gulp.src('./app/js/**/*.js')
         .pipe(gulp.dest('./dev/js/'));
     });
 
