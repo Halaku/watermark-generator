@@ -31,6 +31,8 @@
 }
 
 .preview__window {
+	display: flex;
+	justify-content: center;
   width: 652px;
   height: 534px;
   line-height: 534px; //для выравнивания блока с изображением по вертикали
@@ -38,6 +40,7 @@
 }
 
 .preview__window-img {
+	align-self: center;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -134,8 +137,56 @@
 }
 
 .input__label_position {
-  margin-bottom: 35px;
+  margin-bottom: 39px;
+  display: inline-block;
 }
+
+.mode {
+	margin-top: -4px;
+	margin-right: -12px;
+	display: inline-block;
+	float: right;
+}
+
+.mode__single {
+	cursor: pointer;
+	display: inline-block;
+	content: "";
+	@include sprite($single);
+	margin-left: 7px;
+	&:hover {
+		@include sprite($single-hover);
+
+	}
+
+	&_active {
+		@include sprite($single-active);
+		cursor: auto;
+		&:hover {
+			@include sprite($single-active);
+		}
+	}
+}
+
+.mode__tile {
+	cursor: pointer;
+	display: inline-block;
+	content: "";
+	@include sprite($tile);
+	&:hover {
+		@include sprite($tile-hover);
+
+	}
+
+	&_active {
+		cursor: auto;
+		@include sprite($tile-active);
+		&:hover {
+			@include sprite($tile-active);
+		}
+	}
+}
+
 .map {
   display: inline-block;
   margin-bottom: 31px;
