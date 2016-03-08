@@ -1,8 +1,21 @@
-1. git clone https://github.com/Halaku/watermark-generator.git wmg
-2. cd wmg
-3. npm i
-4. bower i
-5. gulp build для полуения дев билда
-6. gulp для запуска browser-sync
-Для удаления ./dev команда gulp cleandev
-Для работы с js пока ничего нет, добавлю в пт вечером
+# Watermark Generator
+Loftschool project 3
+
+To see this project go to http://halaku.github.io/
+
+### Installation
+... or take the following steps
+```sh
+git clone https://github.com/Halaku/watermark-generator.git wmg
+cd wmg
+npm i
+bower i
+gulp build 
+gulp
+```
+
+If you want to rebuild poject
+```sh
+gulp cleandev
+gulp build 
+```
