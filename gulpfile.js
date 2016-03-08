@@ -10,11 +10,11 @@ var imagemin = require('gulp-imagemin');
 var autoprefixer = require('gulp-autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var rename = require("gulp-rename");
-// var concat = require('gulp-concat');
+var concat = require('gulp-concat');
 
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
-        .pipe(gulpif('*.js', gulp.dest('./app/js/vendor')));
+        .pipe(gulpif('*.js', gulp.dest('./dev/js')));
 
         
     gulp.src('./app/bower/normalize-css/normalize.css')
@@ -25,7 +25,7 @@ gulp.task('mainfiles', function() {
 
 gulp.task('js', function() {
     gulp.src('./app/js/*.js')
-        // .pipe(concat('main.js'))
+        .pipe(concat('main.js'))
         .pipe(gulp.dest('./dev/js/'));
     });
 
