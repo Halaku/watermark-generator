@@ -1,3 +1,13 @@
+.ui-widget-content {
+  background-image: none;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background-image: none;
+}
+.ui-state-default .ui-icon {
+  background-image: none;
+}
+
 .ui-spinner {
   
   width: 64px;
@@ -5,10 +15,11 @@
 	background-color: $white;
 
 	.ui-spinner-input {
+    box-sizing: border-box;
 		border: 1px solid #9eb2c0;
 		border-radius: 2px/3px;
-		width: 44px;
-		height: 43px;
+		width: 46px;
+		height: 45px;
 		text-align: center;
 		margin: 0;
 		font-family: "robotolight";

@@ -16,6 +16,7 @@ var slider = (function() {
                 wmOpacity;
 
             sliderBlock.slider({
+                range: "min",
                 min: 0,
                 max: 1,
                 step: 0.01,

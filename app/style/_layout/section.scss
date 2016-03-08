@@ -2,7 +2,7 @@
   padding-top: 60px;
   height: 670px;
   width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 25px;
 }
 
 .preview {
@@ -68,7 +68,6 @@
   border-left: 1px solid #9f979a;
   width: 260px;
   height: 670px;
-  
 }
 
 
@@ -97,7 +96,7 @@
 .settings__opacity {
   position: relative;
   border-bottom: 1px solid $light-orange;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 .input__label {
@@ -171,23 +170,20 @@
 
 .coords {
   float: right;
-  &__x{
+  &__x {
     margin-bottom: 12px;
   }
 }
 
 .input__label_coords {
-  font-family: "robotolight";
+  font-family: 'robotolight';
   font-size: 16px;
   color: #444a53;
   margin-right: 3px;
-
   vertical-align: middle;
 }
 
-.coords__input {
 
-}
 
 
 
@@ -195,10 +191,26 @@
 // Прозрачность
 // ==================================
 
+.settings__opacity {
+  padding-left: 19px;
+  padding-bottom: 3px;
+  margin-bottom: 56px;
+}
 
+.opacity__block {
+  margin-left: 1px;
+}
+
+.input__label_opacity {
+  margin-bottom: 28px;
+}
 // ==================================
 // Кнопки
 // ==================================
+
+.settings__buttons {
+  margin-left: 10px;
+}
 
 .button {
   width: 99px;
@@ -208,25 +220,43 @@
   font-size: 18px;
   border: none;
   border-radius: 3px;
+
 }
 
 .button__reset {
   background-color: #c1cfd9;
-
+box-sizing: border-box;
   &:hover {
-    background-color: darken(#c1cfd9, 10%);
+    border-width: 1px;
+    border-color: rgb(166, 178, 187);
+    border-style: solid;
+    background: rgb(158,170,179);
+    background: linear-gradient(to bottom, rgba(158,170,179,1) 0%,rgba(176,189,198,1) 5%,rgba(193,207,217,1) 100%);
   }
   &:active {
-    background-color: darken(#c1cfd9, 20%);
+    border-width: 1px;
+    border-color: rgb(166, 178, 187);
+    border-style: solid;
+    background: rgb(158,170,179);
+    background: linear-gradient(to bottom, rgba(158,170,179,1) 0%,rgba(176,189,198,1) 5%,rgba(193,207,217,1) 100%);
   }
 }
 .button__submit {
   background-color: $orange;
-
+  box-sizing: border-box;
+  margin-left: 36px;
   &:hover {
-    background-color: darken($orange, 10%);;
+    border-width: 1px;
+    border-color: rgb(227, 115, 108);
+    border-style: solid;
+    background: rgb(227,115,108);
+    background: linear-gradient(to bottom, rgba(227,115,108,1) 0%,rgba(238,121,113,1) 5%,rgba(249,126,118,1) 100%);
   }
   &:active {
-    background-color: darken($orange, 20%);;
+    border-width: 1px;
+    border-color: rgb(227, 115, 108);
+    border-style: solid;
+    background: rgb(227,115,108);
+    background: linear-gradient(to bottom, rgba(227,115,108,1) 0%,rgba(238,121,113,1) 5%,rgba(249,126,118,1) 100%);
   }
 }
