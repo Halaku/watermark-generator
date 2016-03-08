@@ -108,7 +108,7 @@
 				} else {
 					scales.imgScale = false;
 				}
-				if (file.watermark)
+				if (file.watermark) {
 					scales.wmScale = file.watermark.size.startSize['width']/file.watermark.size.resultSize['width'];
 				} else {
 					scales.wmScale = false;
