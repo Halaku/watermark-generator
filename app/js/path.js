@@ -1,11 +1,13 @@
-// (function(){
-// 	function include(url) {
-// 		$('body').append("<script src='"+ url +"'></script>");
-// 	}
-
-// 	include("js/main.js");
-// 	include("js/positioning.js");
-// 	include("js/wmOpacity.js");
-
-// })();
+(function () {
+	function include(path) {
+		$('body').append('<script src="'+path+'"></script>');
+	}
+	include('js/jquery.js');
+	include('js/jquery-ui.js');
+	include('js/jquery.fileupload.js');
+	include('js/block.js');
+	include('js/fileupload.js');
+	include('js/positioning.js');
+	include('js/wmOpacity.js');
+})();
 

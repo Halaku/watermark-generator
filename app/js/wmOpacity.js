@@ -3,7 +3,7 @@ var slider = (function() {
     function sendValues(sliderBlock) {
         var value;
         value = sliderBlock.slider('value');
-        wmOpacity = value;
+        wmOpacity = 1 - value;
     }
 
     function changeOpacity() {
@@ -20,7 +20,7 @@ var slider = (function() {
                 min: 0,
                 max: 1,
                 step: 0.01,
-                value: 1,
+                value: 0,
                 slide: function() {
                     sendValues(sliderBlock);
                     changeOpacity();
