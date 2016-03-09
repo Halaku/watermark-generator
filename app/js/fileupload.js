@@ -36,7 +36,7 @@
 					}
 					file.source.path = e.target.result;
 					display(file.source, id);
-					resizeSource();
+					resizeWatermark();
 					file.source.size = sizesCalc(file.source, id);
 					file.scale = scaleCalc();
 				} else if (id == 'watermark') {
@@ -64,11 +64,15 @@
 			source.attr('src', file.path);
 		} else if (type == 'watermark') {
 			watermark.attr('src', file.path);
-			watermark.css({
-				"left": 0,
-				"top" : 0
-			});
 		}
+		resetWatermarkCoords();
+	}
+
+	function resetWatermarkCoords() {
+			watermark.css({
+				'left': 0,
+				'top': 0
+			});
 	}
 
 	function resizeWatermark() {
@@ -78,50 +82,42 @@
 		});
 		var widthDif =  source.width() - watermark.width(),
 			heightDif = source.height() - watermark.height();
-		if ((abs(widthDif) > abs(heightDif) && widthDif < 0) || (heightDif >= 0 && widthDif < 0)) {
-			watermark.css('width', source.css('width'));
-		} else {
-			watermark.css('height', source.css('height'));
-		}
-	}
-
-	function resizeSource() {
-		source.css({
-			'width': 'auto',
-			'height': 'auto'
-		});
-		var widthDif = container.width() - source.width(),
-			heightDif = container.height() - source.height();
-		if (widthDif > 0 && heightDif > 0) {
-			if (abs(widthDif) > abs(heightDif) && widthDif > 0 && heightDif > 0) {
-				source.css('height', container.css('height'));
+		if (widthDif < 0 || heightDif < 0) {
+			if ((abs(widthDif) > abs(heightDif) && widthDif < 0) || (heightDif >= 0 && widthDif < 0)) {
+				watermark.css('width', source.css('width'));
 			} else {
-				source.css('width', container.css('width'));
+				watermark.css('height', source.css('height'));
 			}
 		}
 	}
 
 	function sizesCalc(pic, id) {
 		$('body').append('<img src="'+pic.path+'" id="img-size-helper">');
-					var img = $('#img-size-helper'),
-						size = {};
-					size.startSize = {
-							width: img.width(),
-							height: img.height()
-						};
-					if (id == 'source')
-						size.resultSize = {
-								width: $('.processed_img').width(),
-								height: $('.processed_img').height()
-							};
-					else if (id == 'watermark')
-						size.resultSize = {
-							width: $('.processed_wm').width(),
-							height: $('.processed_wm').height()
-						};
-					img.remove();
-					size.scale = size.startSize['width'] / size.resultSize['width'];
-					return size;
+		var img = $('#img-size-helper'),
+			size = {},
+			widthScale,
+			heightScale;
+		size.startSize = {
+				width: img.width(),
+				height: img.height()
+			};
+		if (id == 'source') {
+			size.resultSize = {
+					width: $('.processed_img').width(),
+					height: $('.processed_img').height()
+				};
+		}	else if (id == 'watermark') {
+			size.resultSize = {
+				width: $('.processed_wm').width(),
+				height: $('.processed_wm').height()
+			};
+		}
+		img.remove();
+		widthScale = size.startSize['width'] / size.resultSize['width'];
+		heightScale = size.startSize['height'] / size.resultSize['height'];
+		size.scale = widthScale > heightScale ? widthScale : heightScale;
+
+		return size;
 	}
 
 	function scaleCalc() {
@@ -153,8 +149,9 @@
 				}
 			},
 			getScale: function () {
-				if (file.source.size.scale && file.watermark.size.scale)
+				if (file.source.size.scale && file.watermark.size.scale) {
 					return file.source.size.scale / file.watermark.size.scale;
+				}
 			}
 		}
 	}
