@@ -33,6 +33,12 @@ var Positioning = (function(){
 		wm.load(function() {
 			wmWidth = wm.width(),
 			wmHeight = wm.height();
+			//сброс секторов 
+			$(mapItem).removeClass('map__item_active');
+			$(mapItem[0]).addClass('map__item_active');
+			//сброс инпутов
+			inputX.val(0);
+			inputY.val(0);
 		});
 
 		mapList.on('click', function(){
@@ -102,7 +108,6 @@ var Positioning = (function(){
 				min: 0,
 				max: imgWidth-wmWidth
 			});
-			console.log(imgHeight-wmHeight);
 			var currentVal = ui.value;
 			wm.css({
 				left: currentVal + 'px'
