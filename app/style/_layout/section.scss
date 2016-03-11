@@ -194,6 +194,7 @@ img[src=""] {
 // Позиция
 // ==================================
 .settings__position {
+
   @include clearfix;
   padding-left: 19px;
   padding-right: 21px;
@@ -202,6 +203,8 @@ img[src=""] {
 
 .input__label_position {
   margin-bottom: 39px;
+  margin-right: 10px;
+  display: inline-block;
 }
 
 .mode {

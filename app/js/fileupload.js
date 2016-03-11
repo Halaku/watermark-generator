@@ -66,6 +66,7 @@
 			watermark.attr('src', file.path);
 		}
 		resetWatermarkCoords();
+		slider.init();
 	}
 
 	function resetWatermarkCoords() {
