@@ -26,12 +26,18 @@ var Positioning = (function(){
 
 	var _sizesUpdate = function(){
 		img.load(function() {
-  		imgWidth = img.width(),
+  		imgWidth = img.width();
 			imgHeight = img.height();
+			//сброс секторов 
+			$(mapItem).removeClass('map__item_active');
+			$(mapItem[0]).addClass('map__item_active');
+			//сброс инпутов
+			inputX.val(0);
+			inputY.val(0);
 		});
 
 		wm.load(function() {
-			wmWidth = wm.width(),
+			wmWidth = wm.width();
 			wmHeight = wm.height();
 			//сброс секторов 
 			$(mapItem).removeClass('map__item_active');

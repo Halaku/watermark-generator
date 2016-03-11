@@ -24,7 +24,7 @@ gulp.task('mainfiles', function() {
 
 gulp.task('js', function() {
     gulp.src('./app/js/**/*.js')
-        .pipe(concat('main.js'))
+        .pipe(concat('main.js'));
     gulp.src('./app/js/*.js')
         .pipe(gulp.dest('./dev/js/'));
     });
