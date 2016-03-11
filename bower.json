@@ -23,6 +23,6 @@
     "jquery-ui": "jqueryui#^1.11.4",
     "jquery": "^2.2.1",
     "normalize-css": "normalize.css#^3.0.3",
-    "blueimp-file-upload": "fileupload#^9.12.1"
+    "blueimp-file-upload": "^9.12.1"
   }
 }
