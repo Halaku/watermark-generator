@@ -27,7 +27,7 @@
   color: #8e9298;
   text-transform: uppercase;
   line-height: 33px;
-  background-color: #d6d5d7;
+  background-color: rgba(241, 241, 245, .7);
   text-align: center;
   width: 43px;
   height: 33px;
@@ -54,7 +54,7 @@
   right: -43px;
   top: 0;
   cursor: pointer;
-  background-color: #d9d5d3;
+  background-color: rgba(255, 255, 255, .6);
   @include sprite($socials);
   &:hover {
     @include sprite($socials-hover);
@@ -66,7 +66,7 @@
 
 .socials__item {
   list-style: none;
-  background-color: #d9d5d3;
+  background-color: rgba(255, 255, 255, .6);
   width: 43px;
   height: 41px;
 }
