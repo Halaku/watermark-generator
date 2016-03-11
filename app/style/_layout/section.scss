@@ -204,7 +204,7 @@ img[src=""] {
 
 .input__label_position {
   margin-bottom: 39px;
-  margin-right: 10px;
+  margin-right: 50px;
   display: inline-block;
 }
 
@@ -213,9 +213,13 @@ img[src=""] {
 	margin-right: -12px;
 	display: inline-block;
 	float: right;
+  //=== ОТКЛЮЧЕНИЕ КНОПОК ВЫБОРА РЕЖИМА ===
+  display: none;
+  //=======================================
 }
 
 .mode__single {
+
 	cursor: pointer;
 	display: inline-block;
 	content: "";

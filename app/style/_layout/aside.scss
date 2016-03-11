@@ -1,0 +1,92 @@
+.lang {
+  position: absolute;
+  top: 102px;
+  left: 0;
+}
+
+.lang__list {
+  padding: 0;
+}
+
+.lang__item {
+  list-style: none;
+  border-bottom: 1px solid #8e9298;
+
+  &:last-child {
+    border: none;
+  }
+  &:hover .lang__link {
+    color: #444a53;
+  }
+}
+
+.lang__link {
+  display: inline-block;
+  font-family: 'robotolight';
+  font-size: 20px;
+  color: #8e9298;
+  text-transform: uppercase;
+  line-height: 33px;
+  background-color: #d6d5d7;
+  text-align: center;
+  width: 43px;
+  height: 33px;
+  text-decoration: none;
+  transition: color .3s;
+  &:visited {
+    color: #8e9298;
+  }
+}
+
+.socials {
+  @include clearfix;
+  position: absolute;
+  top: 189px;
+  left: -43px;
+  transition: all .3s ease-out 0s;
+  &:hover {
+    left: 0;
+  }
+}
+
+.socials__button {
+  position: absolute;
+  right: -43px;
+  top: 0;
+  cursor: pointer;
+  background-color: #d9d5d3;
+  @include sprite($socials);
+  &:hover {
+    @include sprite($socials-hover);
+  }
+}
+.socials__list {
+  padding: 0;
+}
+
+.socials__item {
+  list-style: none;
+  background-color: #d9d5d3;
+}
+
+.socials__link {
+  display: inline-block;
+  &_fb {
+    @include sprite($fb);
+    &:hover {
+      @include sprite($fb-hover);
+    }
+  }
+  &_tw {
+    @include sprite($tw);
+    &:hover {
+      @include sprite($tw-hover);
+    }
+  }
+  &_vk {
+    @include sprite($vk);
+    &:hover {
+      @include sprite($vk-hover);
+    }
+  }
+}
