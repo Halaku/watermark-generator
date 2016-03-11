@@ -24,6 +24,17 @@ var Positioning = (function(){
 		mapList.on('click', _sector);
 	};
 
+	var reset = function() {
+			//сброс секторов 
+			$(mapItem).removeClass('map__item_active');
+			$(mapItem[0]).addClass('map__item_active');
+			//сброс инпутов
+			inputX.val(0);
+			inputY.val(0);
+			wm.css({'top': 0,
+							'left':0});
+	};
+
 	var _sizesUpdate = function(){
 		img.load(function() {
   		imgWidth = img.width();
@@ -134,7 +145,8 @@ var Positioning = (function(){
 	};
 
     return{
-      init: init
+      init: init,
+      reset: reset
     };
 })();
 

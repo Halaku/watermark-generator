@@ -9,5 +9,6 @@
 	include('js/fileupload.js');
 	include('js/positioning.js');
 	include('js/wmOpacity.js');
+	include('js/reset.js');
 })();
 
