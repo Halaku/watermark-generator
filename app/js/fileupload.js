@@ -11,7 +11,7 @@
 		watermark = $('.processed_wm'),
 		source = $('.processed_img'),
 		container = $('.preview__window'),
-		formats = ['jpg', 'png', 'bmp', 'gif'];
+		formats = ['jpg', 'png', 'bmp', 'gif', 'jpeg'];
 
 	init();
 	publicInterface();
@@ -79,17 +79,29 @@
 	}
 
 	function resizeWatermark() {
-		watermark.css({
-			'width': 'auto',
-			'height': 'auto'
-		});
-		var widthDif =  source.width() - watermark.width(),
-			heightDif = source.height() - watermark.height();
-		if (widthDif < 0 || heightDif < 0) {
-			if ((abs(widthDif) > abs(heightDif) && widthDif < 0) || (heightDif >= 0 && widthDif < 0)) {
-				watermark.css('width', source.css('width'));
+		if (file.watermark) {
+			watermark.css({
+				'width': 'auto',
+				'height': 'auto'
+			});
+			var imgScale = +file.source.size.scale,
+				widthScale = watermark.width() / imgScale,
+				heightScale = watermark.height() / imgScale,
+				widthDif =  source.width() - widthScale,
+				heightDif = source.height() - heightScale;
+
+
+			if (widthDif < 0 || heightDif < 0) {
+				if ((abs(widthDif) > abs(heightDif) && widthDif < 0) || (heightDif >= 0 && widthDif < 0)) {
+					watermark.css('width', source.css('width'));
+				} else {
+					watermark.css('height', source.css('height'));
+				}
 			} else {
-				watermark.css('height', source.css('height'));
+				watermark.css({
+					'height' : heightScale,
+					'width' : widthScale
+				});
 			}
 		}
 	}
@@ -119,7 +131,6 @@
 		widthScale = size.startSize['width'] / size.resultSize['width'];
 		heightScale = size.startSize['height'] / size.resultSize['height'];
 		size.scale = widthScale > heightScale ? widthScale : heightScale;
-
 		return size;
 	}
 
@@ -127,7 +138,6 @@
 		if (file.source && file.watermark) {
 			var scale = file.source.size.scale / file.watermark.size.scale;
 		}
-
 		return scale;
 	}
 
