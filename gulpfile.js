@@ -11,6 +11,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var mainBowerFiles = require('main-bower-files');
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
+var Promise = require('es6-promise').Promise;
 
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
