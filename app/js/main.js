@@ -6,6 +6,8 @@ $(function(){
 		var sourceImg = $(".processed_img"); //исходное изображение
 		var watermark = $("#draggable"); //водяной знак
 		var href = "php/server.php"; //путь до серверного обработчика
+		var watermarkType = $("#source-file-text").val().split('.')[1];
+		var sourceType = $("#watermark-file-text").val().split('.')[1];
 
 		postData = {
 			sourceImg: $(sourceImg).attr('src'),
@@ -13,7 +15,9 @@ $(function(){
 		  	watermarkX : $("#coords-x").val(),
 		    watermarkY : $("#coords-y").val(),
 		    opacity : $(watermark).css("opacity"),
-		    scale : $(sourceImg).attr('data-scale')
+		    scale : $(sourceImg).attr('data-scale'),
+		    watermarkType: watermarkType,
+		    sourceType: sourceType
 
 		};
 		
@@ -22,13 +26,13 @@ $(function(){
 		  url: href,
 		  data: postData,
 		  success: function(msg){
-		  	console.log(msg);
-	    	var link = document.createElement('a'); // создаём ссылку на скачивание и имитируем клик.
- 	     	link.target = "_blank";
-			link.download = "img.png";
-			link.href = "img/tmp.png";
-			link.click();
-			
+		  console.log(msg);
+	  //   	var link = document.createElement('a'); // создаём ссылку на скачивание и имитируем клик.
+ 	 //     	link.target = "_blank";
+			// link.download = "img.png";
+			// link.href = "files/tmp.png";
+			// link.click();
+		
 		  }
 		});
 
