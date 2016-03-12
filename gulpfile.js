@@ -16,7 +16,6 @@ var Promise = require('es6-promise').Promise;
 gulp.task('mainfiles', function() {
     gulp.src(mainBowerFiles())
         .pipe(gulpif('*.js', gulp.dest('./dev/js')));
-
         
     gulp.src('./app/bower/normalize-css/normalize.css')
         .pipe(rename('normalize.scss'))
@@ -25,8 +24,9 @@ gulp.task('mainfiles', function() {
 
 
 gulp.task('js', function() {
+    gulp.src('./app/js/**/*.js')
+        .pipe(concat('main.js'));
     gulp.src('./app/js/*.js')
-        .pipe(concat('main.js'))
         .pipe(gulp.dest('./dev/js/'));
     });
 
@@ -94,7 +94,7 @@ gulp.task('favicon', function() {
 
 gulp.task('server', function() {
     browserSync({
-        port: 9000,
+        port: 8000,
         server: {
             baseDir: './dev'
         }

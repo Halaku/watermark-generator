@@ -1,0 +1,15 @@
+aside.aside
+	.lang
+		ul.lang__list
+			- var languages = ['Рус', 'Eng']
+			each lang in languages
+				li.lang__item
+					a(href="").lang__link= lang
+	.socials
+		.socials__button
+			.socials__button_img
+		ul.socials__list
+			- var socials = ['fb', 'tw', 'vk']
+			each social in socials
+				li.socials__item
+					a(href="" class="socials__link_#{social}").socials__link

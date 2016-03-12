@@ -31,6 +31,8 @@
 }
 
 .preview__window {
+	display: flex;
+	justify-content: center;
   width: 652px;
   height: 534px;
   line-height: 534px; //для выравнивания блока с изображением по вертикали
@@ -38,6 +40,7 @@
 }
 
 .preview__window-img {
+	align-self: center;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -54,7 +57,13 @@
   line-height: 0;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
+
+img[src=""] {
+    display: none !important;
+}
+
 
 // ==================================
 // НАСТРОЙКИ
@@ -111,6 +120,10 @@
   }
 }
 
+.settings__files {
+  padding-left: 19px;
+  padding-bottom: 9px;
+}
 .input__label {
   font-family: 'robotolight';
   font-size: 14px;
@@ -121,12 +134,68 @@
 
 .input__file {
   margin-bottom: 24px;
+	display: block;
+	font-family: "robotolight";
+	font-size: 14px;
+	color: $font;
+	line-height: 16px;
+	margin-bottom: 8px;
+}
+
+.input__file-container {
+	margin-bottom: 22px;
+  margin-top: 7px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 219px;
+}
+
+.input__file-name {
+	flex: 1;
+	box-sizing: border-box;
+	padding: 7px 4px 8px 4px;
+	width: 0;
+	height: 27px;
+	font-size: 12px;
+	color: #9eb2c0;
+	border: 1px solid #9eb2c0;
+	border-radius: 3px;
+	background-color: #f1f1f5;
+}
+
+.input__file-button {
+	padding: 0 8px 0 10px;
+	margin-left: -2px;
+	height: 27px;
+	line-height: 30px;
+	background-color: $orange;
+	border-radius: 0 3px 3px 0;
+	&:after {
+		content: ' ';
+		display: inline-block;
+		@include sprite($download);
+	}
+}
+
+.input__fake-file {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.input__file {
+	display: none;
 }
 
 // ==================================
 // Позиция
 // ==================================
 .settings__position {
+
   @include clearfix;
   padding-left: 19px;
   padding-right: 21px;
@@ -134,11 +203,64 @@
 }
 
 .input__label_position {
-  margin-bottom: 35px;
+  margin-bottom: 39px;
+  margin-right: 50px;
+  display: inline-block;
 }
+
+.mode {
+	margin-top: -4px;
+	margin-right: -12px;
+	display: inline-block;
+	float: right;
+  //=== ОТКЛЮЧЕНИЕ КНОПОК ВЫБОРА РЕЖИМА ===
+  display: none;
+  //=======================================
+}
+
+.mode__single {
+
+	cursor: pointer;
+	display: inline-block;
+	content: "";
+	@include sprite($single);
+	margin-left: 7px;
+	&:hover {
+		@include sprite($single-hover);
+
+	}
+
+	&_active {
+		@include sprite($single-active);
+		cursor: auto;
+		&:hover {
+			@include sprite($single-active);
+		}
+	}
+}
+
+.mode__tile {
+	cursor: pointer;
+	display: inline-block;
+	content: "";
+	@include sprite($tile);
+	&:hover {
+		@include sprite($tile-hover);
+
+	}
+
+	&_active {
+		cursor: auto;
+		@include sprite($tile-active);
+		&:hover {
+			@include sprite($tile-active);
+		}
+	}
+}
+
 .map {
   display: inline-block;
-  margin-bottom: 31px;
+  margin-bottom: 26px;
 }
 
 .map__list {
@@ -272,4 +394,21 @@
     background: rgb(227,115,108);
     background: linear-gradient(to bottom, rgba(227,115,108,1) 0%,rgba(238,121,113,1) 5%,rgba(249,126,118,1) 100%);
   }
+}
+
+// ==================================
+// Класс для блокировки
+// ==================================
+.disable {
+  position: relative;
+}
+.disable:after {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(241,241,245,0.5);
+  content: "";
 }
