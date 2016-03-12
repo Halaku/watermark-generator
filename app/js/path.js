@@ -4,7 +4,7 @@
 	}
 	include('js/jquery.js');
 	include('js/jquery-ui.js');
-	include('js/jquery.fileupload.js');
+	include('js/vendor/jquery.fileupload.js');
 	include('js/block.js');
 	include('js/fileupload.js');
 	include('js/positioning.js');

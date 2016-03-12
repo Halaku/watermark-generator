@@ -125,7 +125,7 @@
 		if (file.source && file.watermark) {
 			var scale = file.source.size.scale / file.watermark.size.scale;
 		}
-
+		$(".processed_img").attr("data-scale", scale);
 		return scale;
 	}
 
