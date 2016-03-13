@@ -1,7 +1,7 @@
 # Watermark Generator
 Loftschool project 3
 
-To see this project go to http://halaku.github.io/
+To see this project go to http://alt-bad.tmweb.ru/
 
 ### Installation
 ... or take the following steps
