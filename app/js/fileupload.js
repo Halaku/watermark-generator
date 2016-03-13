@@ -11,7 +11,7 @@
 		watermark = $('.processed_wm'),
 		source = $('.processed_img'),
 		container = $('.preview__window'),
-		formats = ['jpg', 'png', 'bmp', 'gif', 'jpeg'];
+		formats = ['jpg', 'jpeg', 'png', 'bmp', 'gif'];
 
 	init();
 	publicInterface();
@@ -56,7 +56,7 @@
 
 				reader.readAsDataURL(data.files[0]);
 			} else {
-				alert('Неверный формат файла. Подходящие форматы: '+formats.join(', ')+'.');
+				alert('К сожалению, наш сервис поддерживает только следующие форматы: '+formats.join(', ')+'.');
 			}
 		}
 	}
