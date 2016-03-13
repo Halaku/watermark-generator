@@ -11,7 +11,7 @@
         watermark = $('.processed_wm'),
         source = $('.processed_img'),
         container = $('.preview__window'),
-        formats = ['jpg', 'jpeg', 'png', 'bmp', 'gif'];
+        formats = ['jpg', 'jpeg', 'png', 'gif'];
 
     init();
     publicInterface();

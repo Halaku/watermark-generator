@@ -17,7 +17,7 @@ var language = (function() {
             'watermark': 'Водяной знак',
             'place': 'Положение',
             'transparency': 'Прозрачность',
-            'resize' : 'Resize watermark',
+            'resize' : 'Изменить размер водяного знака',
             'reset': 'Сброс',
             'download': 'Скачать'
         },
