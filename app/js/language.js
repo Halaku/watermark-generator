@@ -6,18 +6,20 @@ var language = (function() {
             'watermark': 'Watermark',
             'place': 'Place',
             'transparency': 'Transparency',
+            'resize' : 'Resize watermark',
             'reset': 'Reset',
             'download': 'Download'
         },
         rus = {
-            header: 'Генератор водяных знаков',
-            settings: 'Настройки',
-            image: 'Исходное изображение',
-            watermark: 'Водяной знак',
-            place: 'Положение',
-            transparency: 'Прозрачность',
-            reset: 'Сброс',
-            download: 'Скачать'
+            'header': 'Генератор водяных знаков',
+            'settings': 'Настройки',
+            'image': 'Исходное изображение',
+            'watermark': 'Водяной знак',
+            'place': 'Положение',
+            'transparency': 'Прозрачность',
+            'resize' : 'Resize watermark',
+            'reset': 'Сброс',
+            'download': 'Скачать'
         },
         button = $('.lang__link'),
         header = $('.preview__header-text'),
@@ -26,6 +28,7 @@ var language = (function() {
         watermark = $('.input__label-wm'),
         place = $('.input__label_position'),
         transparency = $('.input__label_opacity'),
+        resize = $('.input__label_scale'),
         reset = $('.button__reset'),
         download = $('.button__submit');
 
@@ -37,6 +40,7 @@ var language = (function() {
             watermark.text(eng.watermark);
             place.text(eng.place);
             transparency.text(eng.transparency);
+            resize.text(eng.resize);
             reset.val(eng.reset);
             download.val(eng.download);
         } else if ($this.attr('id') == 'rus') {
@@ -46,6 +50,7 @@ var language = (function() {
             watermark.text(rus.watermark);
             place.text(rus.place);
             transparency.text(rus.transparency);
+            resize.text(rus.resize);
             reset.val(rus.reset);
             download.val(rus.download);
         }
