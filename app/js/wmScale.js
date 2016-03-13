@@ -8,6 +8,7 @@ var wmScaleSlider = (function() {
 
     function changeScale() {
         var wm = $('.processed_wm'),
+            img = $('.processed_img'),
             wmHeight = wm.attr('data-height'),
             wmWidth = wm.attr('data-width');
         wm.css('width', wmWidth * wmScale)
