@@ -1,10 +1,10 @@
 aside.aside
 	.lang
 		ul.lang__list
-			- var languages = ['Рус', 'Eng']
-			each lang in languages
+			- var languages = {'rus' : 'Рус', 'eng' : 'Eng'}
+			each value, key in languages
 				li.lang__item
-					a(href="").lang__link= lang
+					a(href="" id="#{key}").lang__link= value
 	.socials
 		.socials__button
 			.socials__button_img

@@ -33,29 +33,32 @@ $stampY = $_POST['watermarkY']; // конечная Y позиция для во
 $opacity = $_POST['opacity']*100; // прозрачность
 $scale = $_POST['scale']; //масштаб
 
-$file_dist = $_SERVER['DOCUMENT_ROOT'].'/files/'."tmp.".$_POST['sourceType']; // путь к временному изображению
+$file_dist = $_SERVER['DOCUMENT_ROOT'].'/img/'."tmp.".$_POST['sourceType']; // путь к временному изображению
 
 
 
 // получение высоты/ширины вотермарка
 $width = imagesx($watermark); //ширина вотермарка
 $height = imagesy($watermark); //высота вотермарка
-$new_width = $width*$scale; // ширина с масштабом
-$new_height = $height*$scale; //высота с масштабом
 
+
+$new_width = $_POST['watermarkWidth']*$scale; //ширина с масштабом и ресайзом
+$new_height = $_POST['watermarkHeight']*$scale; //ширина с масштабом и ресайзом
+
+// создаём область для отресайзенного вотермарка
 $watermarkOnScale = imagecreatetruecolor($new_width, $new_height); 
 
 //делаем прозрачность для tranparent
 $black = imagecolorallocate($watermarkOnScale, 0, 0, 0);
 imagecolortransparent($watermarkOnScale, $black);
 
-//вотермарк с масштабом
-imagecopyresampled($watermarkOnScale, $watermark, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+//ресайзим вотермакр
 
+imagecopyresized($watermarkOnScale, $watermark, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
 
 //слияние
 
-imagecopymerge($source, $watermarkOnScale, $stampX*$scale , $stampY*$scale , 0, 0, $width*$scale, $height*$scale, $opacity);
+imagecopymerge($source, $watermarkOnScale, $stampX*$scale, $stampY*$scale, 0, 0, $new_width, $new_height, $opacity);
 
 // //запись во временный файл и освобождение памяти
 switch ($_POST['sourceType']){
@@ -72,7 +75,6 @@ switch ($_POST['sourceType']){
 		imagegif($source, $file_dist);
 		break;
 }
-//imagepng($source, $file_dist );
 imagedestroy($source);
-echo $_POST['sourceImg'];
+
 ?>

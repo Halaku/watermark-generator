@@ -19,13 +19,14 @@ block section
 				.settings__header
 					h2.settings__header-text Настройки
 				form.settings__files(enctype="miltipart/form-data", method="post", id="files-form")
-					label(for="source").input__label Исходное изображение
+					label(for="source").input__label.input__label-img Исходное изображение
 					.input__file-container
 						input(type="text", id="source-file-text").input__file-name
 						label(for="source").input__file-button
 						label(for="source").input__fake-file
 						input(type="file", name="source", id="source").input__file
 					.wm-wrap.disable
+
 						label(for="watermark").input__label Водяной знак
 							.input__file-container
 								input(type="text" id="watermark-file-text").input__file-name
@@ -41,7 +42,7 @@ block section
 						.map
 							ul.map__list
 								- for (i = 0; i < 9; i++)
-									li(class="#{(i == 0) ? 'map__item_active' : ''}").map__item
+									li.map__item
 						.coords
 							.coords__x
 								label(for="coords-x").input__label.input__label_coords X
@@ -52,6 +53,8 @@ block section
 					.settings__opacity
 						.input__label.input__label_opacity Прозрачность
 						.opacity__block
+						.input__label.input__label_scale Размер водяного знака
+						.scale__block
 					.settings__buttons
 						input(type="reset", value="Сброс").button.button__reset
 						input(type="submit", value="Скачать", id="files-upload").button.button__submit

@@ -38,17 +38,12 @@ var Positioning = (function(){
 		img.load(function() {
   		imgWidth = img.width();
 			imgHeight = img.height();
-			//сброс секторов 
-			$(mapItem).removeClass('map__item_active');
-			$(mapItem[0]).addClass('map__item_active');
-			//сброс инпутов
-			inputX.val(0);
-			inputY.val(0);
 		});
 
 		wm.load(function() {
 			wmWidth = wm.width();
 			wmHeight = wm.height();
+			$('.mode__single').addClass('mode__single_active');
 			//сброс секторов 
 			$(mapItem).removeClass('map__item_active');
 			$(mapItem[0]).addClass('map__item_active');
@@ -71,6 +66,12 @@ var Positioning = (function(){
 					[imgHeight - wmHeight, imgWidth - wmWidth]
 			];
 		});
+	};
+
+//Пересчет размеров вотермарка
+	var wmSizes = function(){
+			wmWidth = wm.width();
+			wmHeight = wm.height();
 	};
 
 //Перемещение вотермарка с помощью секторов
@@ -145,7 +146,8 @@ var Positioning = (function(){
 
     return{
       init: init,
-      reset: reset
+      reset: reset,
+      coords: wmSizes
     };
 })();
 
