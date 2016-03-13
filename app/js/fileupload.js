@@ -56,6 +56,7 @@
 			submit.click(function () {
 				data.submit();
 			});
+			wmScaleSlider.init();
 		}
 	}
 
@@ -67,6 +68,7 @@
 		}
 		resetWatermarkCoords();
 		slider.init();
+		wmScaleSlider.init();
 	}
 
 	function resetWatermarkCoords() {
@@ -90,6 +92,8 @@
 				watermark.css('height', source.css('height'));
 			}
 		}
+		$(".processed_wm").attr("data-width", watermark.width());
+		$(".processed_wm").attr("data-height", watermark.height());
 	}
 
 	function sizesCalc(pic, id) {

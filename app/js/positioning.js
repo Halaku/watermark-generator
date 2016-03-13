@@ -145,7 +145,6 @@ var Positioning = (function(){
 
     return{
       init: init,
-      reset: reset
     };
 })();
 
