@@ -11,6 +11,7 @@
 	include('js/wmOpacity.js');
 	include('js/reset.js');
 	include('js/language.js');
+	include('js/wmScale.js');
 
 })();
 

@@ -41,7 +41,7 @@ block section
 						.map
 							ul.map__list
 								- for (i = 0; i < 9; i++)
-									li(class="#{(i == 0) ? 'map__item_active' : ''}").map__item
+									li.map__item
 						.coords
 							.coords__x
 								label(for="coords-x").input__label.input__label_coords X
@@ -52,6 +52,8 @@ block section
 					.settings__opacity
 						.input__label.input__label_opacity Прозрачность
 						.opacity__block
+						.input__label.input__label_scale Размер водяного знака
+						.scale__block
 					.settings__buttons
 						input(type="reset", value="Сброс").button.button__reset
 						input(type="submit", value="Скачать", id="files-upload").button.button__submit

@@ -203,7 +203,7 @@ img[src=""] {
 }
 
 .input__label_position {
-  margin-bottom: 39px;
+  margin-bottom: 15px;
   margin-right: 78px;
   display: inline-block;
 }
@@ -323,22 +323,25 @@ img[src=""] {
 
 
 // ==================================
-// Прозрачность
+// Прозрачность и размер вотермарка
 // ==================================
+.input__label_opacity,
+.input__label_scale {
+  margin-bottom: 29px;
+}
 
 .settings__opacity {
   padding-left: 19px;
   padding-bottom: 3px;
-  margin-bottom: 56px;
+  margin-bottom: 15px;
 }
 
 .opacity__block {
   margin-left: 1px;
+  margin-bottom: 15px;
 }
 
-.input__label_opacity {
-  margin-bottom: 28px;
-}
+
 // ==================================
 // Кнопки
 // ==================================
