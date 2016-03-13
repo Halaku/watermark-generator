@@ -22,13 +22,13 @@ $(function(){
 		    watermarkWidth : $(watermark).css("width").split('px')[0],
 		    watermarkHeight : $(watermark).css("height").split('px')[0]
 		};
-		//console.log(sourceType);
+
 		$.ajax({
 		  type: "POST",
 		  url: href,
 		  data: postData,
 		  success: function(msg){
-		//  console.log(msg);
+
 	    	var link = document.createElement('a'); // создаём ссылку на скачивание и имитируем клик.
  	     	link.target = "_blank";
 			link.download = "img."+sourceType;

@@ -24,11 +24,13 @@ gulp.task('mainfiles', function() {
 
 
 gulp.task('js', function() {
-    gulp.src('./app/js/**/*.js')
-        .pipe(concat('main.js'));
     gulp.src('./app/js/*.js')
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('./dev/js/'));
+    gulp.src('./app/js/vendor/*.js')
         .pipe(gulp.dest('./dev/js/'));
     });
+
 gulp.task('php', function() {
 
     gulp.src('./app/php/*.php')
@@ -85,6 +87,7 @@ gulp.task('images', function() {
             interlaced: true
         }))
         .pipe(gulp.dest('./dev/img/'));
+        
 });
 
 gulp.task('fonts', function() {
