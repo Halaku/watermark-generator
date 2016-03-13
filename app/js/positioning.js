@@ -145,19 +145,10 @@ var Positioning = (function(){
 		});
 	};
 
-//Пересчет размеров вотермарка после того, как пользователь сдвинет handle
-	var _wmScale = function(){
-		var sliderBlock = $('.scale__block');
-		sliderBlock.slider({
-			stop: function(){
-				wmSizes();
-			}
-		});
-	};
-
     return{
       init: init,
-      reset: reset
+      reset: reset,
+      coords: wmSizes
     };
 })();
 

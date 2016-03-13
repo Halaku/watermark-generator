@@ -53,11 +53,19 @@ var wmScaleSlider = (function() {
                     sendValues(sliderBlock);
                     changeScale();
                     changePosition();
+                    Positioning.coords();
                 },
                 create: function() {
                     sendValues(sliderBlock);
                     changeScale();
                     changePosition();
+                    Positioning.coords();
+                },
+                change: function() {
+                    sendValues(sliderBlock);
+                    changeScale();
+                    changePosition();
+                    Positioning.coords();
                 }
             });
         }
