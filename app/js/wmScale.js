@@ -58,11 +58,6 @@ var wmScaleSlider = (function() {
                     sendValues(sliderBlock);
                     changeScale();
                     changePosition();
-                },
-                change: function() {
-                    sendValues(sliderBlock);
-                    changeScale();
-                    changePosition();
                 }
             });
         }
