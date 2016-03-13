@@ -18,7 +18,6 @@ var Positioning = (function(){
 		_coord();
 		_mouseMove();
 		_coordSpin();
-		_wmScale();
 	};
 
 	var _setUpListners = function(){
