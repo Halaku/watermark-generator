@@ -110,8 +110,8 @@
                 });
             }
         }
-        $(".processed_wm").attr("data-width", watermark.width());
-        $(".processed_wm").attr("data-height", watermark.height());
+        watermark.attr("data-width", watermark.width());
+        watermark.attr("data-height", watermark.height());
     }
 
     function sizesCalc(pic, id) {
@@ -139,6 +139,11 @@
         widthScale = size.startSize['width'] / size.resultSize['width'];
         heightScale = size.startSize['height'] / size.resultSize['height'];
         size.scale = widthScale > heightScale ? widthScale : heightScale;
+        if (id == 'source') {
+            source.attr("data-scale", size.scale);
+        } else if (id == 'watermark') {
+            watermark.attr("data-scale", size.scale);
+        }
         return size;
     }
 
@@ -146,7 +151,6 @@
         if (file.source && file.watermark) {
             var scale = file.source.size.scale / file.watermark.size.scale;
         }
-        $(".processed_img").attr("data-scale", scale);
         return scale;
     }
 
