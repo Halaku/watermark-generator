@@ -29,6 +29,11 @@ gulp.task('js', function() {
     gulp.src('./app/js/*.js')
         .pipe(gulp.dest('./dev/js/'));
     });
+gulp.task('php', function() {
+
+    gulp.src('./app/php/*.php')
+        .pipe(gulp.dest('./dev/php/'));
+    });
 
 gulp.task('sprite', function() {
     var spriteData = gulp.src('./app/img/sprite/*.png')
@@ -122,7 +127,8 @@ gulp.task('build', ['sprite', 'mainfiles'], function() {
 	gulp.start('fonts');
 	gulp.start('css');
     gulp.start('jade');
-	gulp.start('js');
+    gulp.start('js');
+	gulp.start('php');
 });
 
 gulp.task('default', ['server', 'watch']);
