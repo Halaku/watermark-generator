@@ -8,7 +8,7 @@ var Block = (function(){
 		var inputImg = $('#source'),
 				inputWm = $('#watermark');
 		$(inputImg).change(function() {
-			if (inputImg.val() != ''){
+			if ($('#source').val() != ''){
 				$('.wm-wrap').removeClass('disable');
 			} else {
 				$('.wm-wrap').addClass('disable');

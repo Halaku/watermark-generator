@@ -24,7 +24,7 @@
         if (data.files && data.files[0]) {
             var id = data.fileInput[0].id,
                 value = data.fileInput[0].files[0].name,
-                type = data.files[0].type;
+                type = data.files[0].type,
             input = $('#' + id),
                 reader = new FileReader(),
                 submit = $('#files-upload');
@@ -61,6 +61,7 @@
                 });
                 wmScaleSlider.init();
             } else {
+                input.empty().change();
                 alert('К сожалению, наш сервис поддерживает только следующие форматы: ' + formats.join(', ') + '.');
             }
         }
