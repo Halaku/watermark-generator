@@ -40,6 +40,7 @@
 }
 
 .preview__window-img {
+  overflow: hidden;
 	align-self: center;
   position: relative;
   display: inline-block;
@@ -77,7 +78,9 @@ img[src=""] {
   height: 670px;
 }
 
-
+.settings__name{
+  @include clearfix;
+}
 
 .settings__header {
   text-align: center;
@@ -201,11 +204,11 @@ img[src=""] {
 }
 
 .input__label_position {
+  float: left;
   margin-bottom: 39px;
 }
 
 .mode {
-	margin-top: -4px;
 	margin-right: -12px;
 	display: inline-block;
 	float: right;
@@ -403,4 +406,37 @@ img[src=""] {
   bottom: 0;
   background-color: rgba(241,241,245,0.5);
   content: "";
+}
+
+// ==================================
+// Замощение
+// ==================================
+.tiling{
+  position: absolute;
+  top: 0;
+}
+.map__tiling{
+  display: none;
+  position: relative;
+  border-radius: 2px; 
+  overflow: hidden;
+  width: 102px;
+  height: 102px;
+  margin-top: -107px;
+}
+.map__margin{
+  background-color: $orange;
+}
+.map__margin_left{
+  margin: auto;
+  height: 102px;
+  width: 1px;
+}
+.map__margin_bottom{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -120px;
+  height: 1px;
+  width: 102px;
 }

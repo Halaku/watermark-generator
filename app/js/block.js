@@ -4,6 +4,8 @@ var Block = (function(){
         _disable();
     };
 
+    
+
 	var _disable = function(){
 		var inputImg = $('#source'),
 				inputWm = $('#watermark');

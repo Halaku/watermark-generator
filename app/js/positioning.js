@@ -33,6 +33,7 @@ var Positioning = (function(){
 		wm.load(function() {
 			wmWidth = wm.width(),
 			wmHeight = wm.height();
+			$('.mode__single').addClass('mode__single_active');
 			//сброс секторов 
 			$(mapItem).removeClass('map__item_active');
 			$(mapItem[0]).addClass('map__item_active');
@@ -55,6 +56,13 @@ var Positioning = (function(){
 					[imgHeight - wmHeight, imgWidth - wmWidth]
 			];
 		});
+	};
+
+	var sizesChange = function(){
+		imgWidth = img.width(),
+		imgHeight = img.height();
+		wmWidth = wm.width(),
+		wmHeight = wm.height();
 	};
 
 //Перемещение вотермарка с помощью секторов
@@ -128,8 +136,14 @@ var Positioning = (function(){
 	};
 
     return{
-      init: init
+      init: init,
+      sizesChange: sizesChange
     };
 })();
 
 Positioning.init();
+
+$('.mode__single').on('click', function(){
+	$(this).addClass('mode__single_active');
+	$('.mode__tile').removeClass('mode__tile_active');
+});

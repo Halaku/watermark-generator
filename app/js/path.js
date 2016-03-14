@@ -8,6 +8,7 @@
 	include('js/block.js');
 	include('js/fileupload.js');
 	include('js/positioning.js');
+	include('js/tiling.js');
 	include('js/wmOpacity.js');
 })();
 
