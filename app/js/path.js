@@ -10,5 +10,7 @@
 	include('js/positioning.js');
 	include('js/tiling.js');
 	include('js/wmOpacity.js');
+	include('js/reset.js');
+	include('js/regimeChange.js');
 })();
 
