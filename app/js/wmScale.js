@@ -53,18 +53,21 @@ var wmScaleSlider = (function() {
                     sendValues(sliderBlock);
                     changeScale();
                     changePosition();
-                    Positioning.coords();
+                    // Positioning.coords();
                 },
                 create: function() {
                     sendValues(sliderBlock);
                     changeScale();
                     changePosition();
-                    Positioning.coords();
+                    // Positioning.coords();
                 },
-                change: function() {
-                    sendValues(sliderBlock);
-                    changeScale();
-                    changePosition();
+                // change: function() {
+                //     sendValues(sliderBlock);
+                //     changeScale();
+                //     changePosition();
+                //     // Positioning.coords();
+                // },
+                stop: function() {
                     Positioning.coords();
                 }
             });

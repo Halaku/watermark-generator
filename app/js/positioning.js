@@ -18,7 +18,6 @@ var Positioning = (function(){
 		_coord();
 		_mouseMove();
 		_coordSpin();
-		_wmScale();
 	};
 
 	var _setUpListners = function(){
@@ -42,8 +41,7 @@ var Positioning = (function(){
 		});
 
 		wm.load(function() {
-			wmWidth = wm.width();
-			wmHeight = wm.height();
+			wmSizes();
 			$('.mode__single').addClass('mode__single_active');
 			//сброс секторов 
 			$(mapItem).removeClass('map__item_active');
