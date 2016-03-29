@@ -61,6 +61,7 @@
 	}
 
 	function display(file, type) {
+		watermark = $('.processed_wm');
 		if (type == 'source') {
 			source.attr('src', file.path);
 		} else if (type == 'watermark') {

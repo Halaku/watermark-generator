@@ -13,7 +13,8 @@ block section
 						//- | поэтому именно внутри него идет позиционирование
 						//- | водяного знака
 						img(src="", alt="Обрабатываемое изображение").processed_img
-						img(src="", alt="Обрабатываемый вотермарк").processed_wm#draggable
+						.tiling
+							img(src="", alt="Обрабатываемый вотермарк").processed_wm#draggable
 
 		.settings
 				.settings__header
@@ -34,14 +35,18 @@ block section
 							input(type="file", name="watermark" id="watermark").input__file
 				.settings-wrap.disable
 					.settings__position
-						.input__label.input__label_position Положение
-						.mode
-							.mode__tile
-							.mode__single.mode__single_active
+						.settings__name
+							.input__label.input__label_position Положение
+							.mode
+								.mode__tile
+								.mode__single
 						.map
 							ul.map__list
 								- for (i = 0; i < 9; i++)
 									li.map__item
+							.map__tiling
+								.map__margin.map__margin_left
+								.map__margin.map__margin_bottom
 						.coords
 							.coords__x
 								label(for="coords-x").input__label.input__label_coords X

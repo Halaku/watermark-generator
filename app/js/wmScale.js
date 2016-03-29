@@ -4,6 +4,7 @@ var wmScaleSlider = (function() {
         var value;
         value = sliderBlock.slider('value');
         wmScale = value;
+        return value;
     }
 
     function changeScale() {
@@ -18,20 +19,21 @@ var wmScaleSlider = (function() {
     function changePosition() {
         var wm = $('.processed_wm'),
             img = $('.processed_img'),
-            wmLeftCurrent = parseInt(wm.css('left').replace('px', '')),
-            wmTopCurrent = parseInt(wm.css('top').replace('px', '')),
-            wmHeightCurrent = parseInt(wm.height()),
-            wmWidthCurrent = parseInt(wm.width()),
+            tiling = $('.tiling'),
+            wmLeftCurrent = parseInt(tiling.css('left').replace('px', '')),
+            wmTopCurrent = parseInt(tiling.css('top').replace('px', '')),
+            wmHeightCurrent = parseInt(tiling.height()),
+            wmWidthCurrent = parseInt(tiling.width()),
             spinnerX = $('#coords-x'),
             spinnerY = $('#coords-y');
 
         if ((wmLeftCurrent + wmWidthCurrent) > img.width()) {
-            wm.css('left', wmLeftCurrent - (wmLeftCurrent + wmWidthCurrent - img.width()));
-            spinnerX.val(parseInt(wm.css('left').replace('px', '')));
+            tiling.css('left', wmLeftCurrent - (wmLeftCurrent + wmWidthCurrent - img.width()));
+            spinnerX.val(parseInt(tiling.css('left').replace('px', '')));
         }
         if ((wmTopCurrent + wmHeightCurrent) > img.height()) {
-            wm.css('top', wmTopCurrent - (wmTopCurrent + wmHeightCurrent - img.height()));
-            spinnerY.val(parseInt(wm.css('top').replace('px', '')));
+            tiling.css('top', wmTopCurrent - (wmTopCurrent + wmHeightCurrent - img.height()));
+            spinnerY.val(parseInt(tiling.css('top').replace('px', '')));
         }
         // ^
         // | This is just a mathemetic
@@ -39,6 +41,7 @@ var wmScaleSlider = (function() {
     }
 
     return {
+        sendValues: sendValues,
         init: function() {
             var sliderBlock = $('.scale__block'),
                 wmScale;
@@ -50,25 +53,43 @@ var wmScaleSlider = (function() {
                 step: 0.01,
                 value: 1,
                 slide: function() {
-                    sendValues(sliderBlock);
-                    changeScale();
+                  var single = $('.mode__single_active');
+                  sendValues(sliderBlock);
+                  changeScale();
+                  if(single.length > 0){
                     changePosition();
-                    // Positioning.coords();
+                    Positioning.coords();
+                  }
                 },
                 create: function() {
-                    sendValues(sliderBlock);
-                    changeScale();
+                  var single = $('.mode__single_active');
+                  sendValues(sliderBlock);
+                  changeScale();
+                  if(single.length > 0){
                     changePosition();
-                    // Positioning.coords();
-                },
-                // change: function() {
-                //     sendValues(sliderBlock);
-                //     changeScale();
-                //     changePosition();
-                //     // Positioning.coords();
-                // },
-                stop: function() {
                     Positioning.coords();
+                  }
+                },
+                change: function() {
+                  var single = $('.mode__single_active');
+                  sendValues(sliderBlock);
+                  changeScale();
+                  if(single.length > 0){
+                    changePosition();
+                    Positioning.coords();
+                  }
+                },
+                stop: function() {
+                  var tile = $('.mode__tile_active'),
+                      single = $('.mode__single_active');
+
+                    if(tile.length > 0){
+                      Tiling.remove();
+                      Tiling.init();
+                    }
+                    if(single.length > 0){
+                      Positioning.coords();
+                    }
                 }
             });
         }
